@@ -12,18 +12,6 @@ import jwt
 from .serializers import UserSerializer
 User = get_user_model()
 
-# class BBuserList(generics.ListCreateAPIView):
-#     queryset = BBuser.objects.all()
-#     serializer_class = BBuserSerializer
-
-# class BBuserDetail(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = BBuser.objects.all()
-#     serializer_class = BBuserSerializer
-
-# def photo(request):
-#     images = Image.objects.all()
-#     ctx = {'images':images}
-#     return render(request, ctx)
 
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
