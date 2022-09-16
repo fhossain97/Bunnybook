@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure--1j!03(q#r53p$j1*3rb(1x&-ayqz237gt7)*y$u304l4_8ov2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -64,9 +64,9 @@ REST_FRAMEWORK = {
 }
 
 cloudinary.config( 
-  cloud_name = env('CLOUD_NAME'), 
-  api_key = env('API_KEY'),
-  api_secret = env('API_SECRET')
+  cloud_name = env('CLOUDINARY_CLOUD_NAME'), 
+  api_key = env('CLOUDINARY_API_KEY'),
+  api_secret = env('CLOUDINARY_API_SECRET')
 )
 
 CORS_ALLOW_HEADERS = (
@@ -161,7 +161,7 @@ TIME_ZONE = 'EST'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

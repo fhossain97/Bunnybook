@@ -19,7 +19,7 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('bunnybook.urls')),
-    path('bunnybook-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('bunnybook/', include('bunnybook.urls')),
+    # path('bunnybook-auth/', include('rest_framework.urls', namespace='rest_framework'))
 
 ]

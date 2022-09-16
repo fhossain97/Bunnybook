@@ -12,6 +12,7 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
         many=True,
         read_only=True
     )
+    file = serializers.FileField()
 
     class Meta:
         model = Post
