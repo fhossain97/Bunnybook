@@ -1,55 +1,66 @@
-import './App.css';
-import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import userService from "./utils/userService";
-import LoginTest from "./pages/Login";
-import SignupTest from "./pages/Signup";
-import Layout from "./components/Layout/Layout";
-import Homepage from './pages/Homepage';
+import React from 'react'
+import { useState, useEffect } from 'react'
+import styled from 'styled-components'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import NewPost from './pages/NewPost'
+import Layout from './components/Layout'
+import PostView from './pages/PostView'
+import PostEdit from './pages/PostEdit'
+import userService from './utils/userService.jsx'
+import Login from './pages/Login/Login.jsx'
+import Register from './pages/Register/Register.jsx'
+import Profile from './components/Profile/Profile.jsx'
 
-function App() {
-  const [state, setState] = useState({})
-  const [user, setUser] = useState({});
+
+const App = () => {
+
+const [ posts, setPosts  ] = useState([])
+const [user , setUser ] = useState()
 
   useEffect(() => {
-    console.log('useEffect Ran!')
-    fetch('http://localhost:8000/posts/')
-    .then(res => res.json())
-    .then(res => {
-      setState(res)
-      return res
-    }).then(res => console.log(res))
-  }, []) 
+    fetch('http://localhost:8000/bunnybook/posts/')
+    .then( res => res.json())
+    .then( items => setPosts(items))
+  }, [])
+  
 
 
+  
+  const addToPost= (post) => {
+     setPosts([...posts, post])
+  }
 
-const handleSignupOrLogin = () => {
-  setUser(userService.getUser())
-}
+  const updatePostState = (id) => {
+      setPosts(posts.filter(post=> post._id !== id))
+  }
+  const handleSignupOrLogin = () => {
+    setUser(userService.getUser());
+  };
 
-
-const handleLogout = () => {
+  const handleLogout = () => {
     userService.logout();
-    setUser(null)
-}
-
+    setUser(null);
+  };
 
   return (
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
+      
+    <Routes>
+        <Route path='/' element={ <Home posts={posts} updatePostState={updatePostState} user={ user} />} />
+        <Route path='/new-post' element={ <NewPost addPost={addToPost}  /> } />
+        <Route path='/posts/edit/:id' element={ <PostEdit  setPosts={setPosts} /> } />
+        <Route path='/posts/:id' element={ <PostView posts={posts}/>} />
+        <Route path='/login' element={ <Login handleSignupOrLogin={handleSignupOrLogin}
+              setUser={setUser} />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
+    </Routes>
 
-      <Routes>
-        <Route path='/' element={<Homepage />} />
-        <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
-        <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
-
-      </Routes>
-    </Layout>
-  );
+  
+    
+  </Layout>
+  )
 }
 
-export default App;
-
-
-
-
-
+export default App
