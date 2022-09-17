@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import django_heroku
 import cloudinary
-import cloudinary.uploader
+# import cloudinary.uploader
 import cloudinary.api
 import environ
 
