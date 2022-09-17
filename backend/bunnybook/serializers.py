@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 import django.contrib.auth.password_validation as validations
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
+from cloudinary.forms import CloudinaryJsFileField  
 User = get_user_model()
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
@@ -12,7 +13,9 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
         many=True,
         read_only=True
     )
-    file = serializers.FileField()
+    # file = serializers.FileField()
+    file = CloudinaryJsFileField(
+    attrs = { 'multiple': 1 })
 
     class Meta:
         model = Post
