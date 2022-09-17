@@ -1,10 +1,12 @@
 import React from "react";
 import "./Profile.css";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import HomeFeed from "../../components/HomeFeed/HomeFeed";
+// import Home from '../../pages/Home/Home'
+import Posts from "../Post/Posts";
 import Rightbar from "../../components/Rightbar/Rightbar";
+// import Status from "../../pages/Status";
 
-const Profile = () => {
+const Profile = ({ posts, updatePostState, user }) => {
   return (
     <div className="profileindv">
       <Sidebar />
@@ -20,7 +22,8 @@ const Profile = () => {
             </div>
         </div>
         <div className="prorightbottom">
-          <HomeFeed />
+         {/*  */}
+        <Posts posts={posts} updatePostState={updatePostState}  user={user} />
           <Rightbar profile/>
         </div>
       </div>

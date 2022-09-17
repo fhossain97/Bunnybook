@@ -10,13 +10,13 @@ const Posts = ({ posts, updatePostState, user }) => {
             updatePostState(id)
         },[id])
     }
-
+console.log(posts)
 
     return (
 
     <div>
         { 
-          posts.length === 0 ? 'No Post Available' :  (posts.map( post => {
+          posts.length === 0 ? 'No Post Available' :  (posts?.map( post => {
                 return <Post id={post.id} post={post} deletePost={deletePost} user={user}/>
             }))
         }

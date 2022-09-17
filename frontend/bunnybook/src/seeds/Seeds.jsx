@@ -56,18 +56,13 @@ export const Users = [
         id: 1,
         date: "November 1, 2022",
         status_body: "It's Britney Bitch",
-        // comments: 5,
         file: "",
-        // like: 5,
-        // dislike: 6
+
       },
       {
         id: 2,
         date: "October 31, 2022",
         status_body: "365",
-        // comments: 10000,
-        file: "",
-        // like: 550000,
-        // dislike:1,
+        file: ''
       },
   ];

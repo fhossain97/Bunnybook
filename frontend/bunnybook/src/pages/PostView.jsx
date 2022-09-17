@@ -1,29 +1,45 @@
 import React, {  useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
-const PostView = ({posts}) => {
-    const { id } = useParams()
-    const [ post, setPost ] = useState()
+
+const PostView = ({posts, updatePostState}) => {
+    
+   
     // let post = posts.find( (p) => p._id === (id))
 
-    useEffect(()=> {
-        fetch(`http://localhost:8000/bunnybook/posts/${id}/`)
+        let navigate = useNavigate()
+        
+        const deletePost = (id) => {
+        axios.delete(`http://localhost:8000/bunnybook/posts/${post.id}/`).then((res) => {
+          console.log(res);
+          updatePostState(id);
+          return navigate("/")
+        });
+      };
+
+      const {id} = useParams()   
+      const [ post, setPost ] = useState()
+
+useEffect(() => {
+fetch(`http://localhost:8000/bunnybook/posts/${id}/`)
         .then(res => res.json())
         .then(data => setPost(data))
-    },[id])
+    })
     
 
-    console.log(post)
+    // console.log(post)
 
 
     return (
         <div>
             {
-            post && ( <>
+            post && (<>
                         <h1>{post.status_body}</h1>
                         <h2>{post.date}</h2>
-                        <img src={post.file} alt="" />
+                        <img className="cimg" alt='' src={`https://res.cloudinary.com/mushu/${post.file}`} />
                         <Link to={`/posts/edit/${post.id}`}>Edit Post</Link>
+                        <button onClick={() => deletePost(post._id)}>Delete</button>
                     </>
                     )
             }

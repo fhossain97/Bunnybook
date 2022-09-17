@@ -3,7 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
-const PostEdit = ({ setPosts }) => {
+
+const PostEdit = ({ setPosts, posts }) => {
   let { id } = useParams();
   const navigate = useNavigate();
 
@@ -31,15 +32,16 @@ const PostEdit = ({ setPosts }) => {
     axios
       .put(`http://localhost:8000/bunnybook/posts/${id}/`, media)
       .then((res) => {
+        console.log(res.data)
         setFormData(initialState);
-        setPosts(res.data);
+        setPosts([...posts, res.data]);
         navigate("/", { replace: true });
       });
   };
 
   useEffect(() => {
     axios.get(`http://localhost:8000/bunnybook/posts/${id}/`).then((res) => {
-      setFormData(res.data);
+      setFormData(res.data)
       console.log(res.data)
     });
   }, [id]);
@@ -49,7 +51,31 @@ const PostEdit = ({ setPosts }) => {
     setFormData({ ...formData, [e.target.id]: e.target.files[0] });
   };
 
-  console.log(formData.file, "is not working?")
+ 
+
+    // let {id} = useParams()
+
+
+// const [comment, setComment] = useState('')
+// const [newComment, setNewComment] = useState('')
+
+// const handleNewComment = (e)=> {
+//   e.preventDefault()
+//   setComment([...comment, newComment])
+//   setNewComment('');
+// }
+
+
+// const handleNewCommentUpdate = (e) => {
+//     setNewComment(e.target.value);
+// }
+
+// const CommentDelete = (id) => {
+//   axios.delete(`http://localhost:8000/bunnybook/posts/${id}/comments/${id}`).then((res) => {
+//     updateComment(id);
+//     return navigate("/")
+//   })
+// }
 
   return (
     <div className="lright">
@@ -79,10 +105,10 @@ const PostEdit = ({ setPosts }) => {
 
       <input
         className="linput"
-        name="media"
-        id="media"
+        name="file"
+        id="file"
         type="file"
-        value={formData.file}
+        // value={formData.file}
         accept="video/*,image/*"
         onChange={handleFile}
       />

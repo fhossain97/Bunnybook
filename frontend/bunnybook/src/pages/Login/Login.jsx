@@ -16,7 +16,7 @@ const Login = ({ handleSignupOrLogin }) => {
     try {
       await userToken.login(formData);
       handleSignupOrLogin();
-      navigate("/posts");
+      navigate("/");
     } catch (err) {
       alert("Invalid Credentials");
     }

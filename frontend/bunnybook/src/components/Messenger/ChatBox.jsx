@@ -1,6 +1,5 @@
 import React from 'react'
 import {ChatEngine} from 'react-chat-engine'
-//import Messaging from './Messaging'
 
 const ChatBox = () => {
   return (
@@ -8,7 +7,7 @@ const ChatBox = () => {
       
 <ChatEngine offset={-4}
       height='100vh'
-      userName='Mushu'
+      userName='MoonMoon'
       projectID = {process.env.REACT_APP_CHAT_APP_PROJECT_ID}
       userSecret={process.env.REACT_APP_CHAT_APP_USER_SECRET}
      

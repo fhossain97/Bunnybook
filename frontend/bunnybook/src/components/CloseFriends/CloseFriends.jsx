@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Sidebar/Sidebar.css'
-// import {Users} from '../../seeds/Seeds'
+import {Users} from '../../seeds/Seeds'
 
 
 const CloseFriends = ({user}) => {

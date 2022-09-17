@@ -1,11 +1,14 @@
 import './Post.css'
-import React, {useState, useEffect} from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
-import axios from "axios";
+// import React, {useState, useEffect} from 'react'
+import { Link} from 'react-router-dom'
+// import { Link, useParams, useNavigate } from 'react-router-dom'
+// import axios from "axios";
 import {MoreVert} from "@mui/icons-material";
 // import {Users} from '../../seeds/Seeds'
 
 const Post = ({ post, deletePost, user, id }) => {
+
+    // const isAdmin = props.user.authority === "ADMIN"
 
       // const [like, setLike] = useState(post.like)
       // const [liked, setLiked] = useState(false)
@@ -24,6 +27,10 @@ const Post = ({ post, deletePost, user, id }) => {
       // }
 
 
+    //   const [isAuthorized,setIsAuthorized] = useState(['ADMIN'].includes(user.authority));
+    //   useEffect(()=>{
+    //         setIsAuthorized(['ADMIN'].includes(user.authority))
+    //        },[user.authority]) 
 
 
   return (
@@ -31,8 +38,8 @@ const Post = ({ post, deletePost, user, id }) => {
 <div className="cwrapper">
     <div className="ctop">
     <div className="topleft">
-    <img className="cpic" alt='profilepic' src={user.filter((u) => u.id === post.id)[0].profilePicture}/>
-    <span className="cusername">{user.filter((u) => u.id === post.id)[0].username}</span>
+    {/* <img className="cpic" alt='profilepic' src={user.filter((u) => u.id === post.id)[0].profilePicture}/>
+    <span className="cusername">{user.filter((u) => u.id === post.id)[0].username}</span> */}
 
     <span className="cdate">{post.date}</span>
     </div>
@@ -42,16 +49,18 @@ const Post = ({ post, deletePost, user, id }) => {
     </div>
     <div className="ccenter">
     <span className="ctext">{post.status_body}</span>
-    <img className="cimg" alt='' src={post.file} />
+    <img className="cimg" alt='' src={`https://res.cloudinary.com/mushu/${post.file}`} />
+{/* 
   { 
       user?.isAdmin ? (
           <>  
               <button onClick={() => deletePost(id)}>Delete</button>
           </>
       )  : null
-  }
+  } */}
 
   <Link to={`/posts/${id}`}>View Details</Link>
+ 
     </div>
     <div className="cbottom">
 {/* <div className="cbottomleft">
