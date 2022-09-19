@@ -10,7 +10,7 @@ import Login from './pages/Login/Login.jsx'
 import Register from './pages/Register/Register.jsx'
 import Profile from './components/Profile/Profile.jsx'
 import Status from './pages/Status.jsx'
-// import Chat from './pages/Chat.jsx'
+
 
 
 
