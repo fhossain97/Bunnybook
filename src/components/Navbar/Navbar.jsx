@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {useState, useEffect} from 'react'
 import "./Navbar.css";
 import { Search, Person, Chat, Notifications } from "@mui/icons-material";
-import SearchBar from "../Search/SearchBar";
+
 
 import React from "react";
 
@@ -25,7 +25,7 @@ const Navbar = ({ user, handleLogout, setUser }) => {
       <div className="navbarCenter">
         <div className="search">
           <Search className="searchIcon" />
-          {/* <SearchBar className="input" data={posts}/> */}
+       
  
           <input placeholder="Search" className="input" />
         </div>
