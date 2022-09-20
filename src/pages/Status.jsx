@@ -29,7 +29,7 @@ const Status = ({addToPost}) => {
     media.append("status_body", formData.status_body);
     media.append("date", formData.date);
     console.log(formData)
-    axios.post("http://localhost:8000/bunnybook/posts/", media)
+    axios.post("https://bunnyback.herokuapp.com/posts/", media)
     .then((res) => {
       console.log(media)
       setFormData(initialState);

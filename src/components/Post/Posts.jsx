@@ -4,7 +4,7 @@ import Post from "./Post";
 
 const Posts = ({ posts, updatePostState, user }) => {
       const deletePost= (id) => {
-        axios.delete(`http://localhost:8000/bunnybook/posts/${id}/`)
+        axios.delete(`https://bunnyback.herokuapp.com/posts/${id}/`)
         .then(res => {
             console.log(res)
             updatePostState(id)

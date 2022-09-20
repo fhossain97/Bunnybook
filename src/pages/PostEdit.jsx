@@ -30,7 +30,7 @@ const PostEdit = ({ setPosts, posts }) => {
     media.append("date", formData.date);
 
     axios
-      .put(`http://localhost:8000/bunnybook/posts/${id}/`, media)
+      .put(`https://bunnyback.herokuapp.com/posts/${id}/`, media)
       .then((res) => {
         console.log(res.data)
         setFormData(initialState);
@@ -40,7 +40,7 @@ const PostEdit = ({ setPosts, posts }) => {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/bunnybook/posts/${id}/`).then((res) => {
+    axios.get(`https://bunnyback.herokuapp.com/posts/${id}/`).then((res) => {
       setFormData(res.data)
       console.log(res.data)
     });
