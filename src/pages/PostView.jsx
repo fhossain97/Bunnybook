@@ -11,7 +11,7 @@ const PostView = ({posts, updatePostState}) => {
         let navigate = useNavigate()
         
         const deletePost = (id) => {
-        axios.delete(`https://bunnyback.herokuapp.com/posts/${post.id}/`).then((res) => {
+        axios.delete(`https://bunnyback.herokuapp.com/bunnybook/posts/${post.id}/`).then((res) => {
           console.log(res);
           updatePostState(id);
           return navigate("/")
@@ -22,7 +22,7 @@ const PostView = ({posts, updatePostState}) => {
       const [ post, setPost ] = useState()
 
 useEffect(() => {
-fetch(`https://bunnyback.herokuapp.com/posts/${id}/`)
+fetch(`https://bunnyback.herokuapp.com/bunnybook/posts/${id}/`)
         .then(res => res.json())
         .then(data => setPost(data))
     })

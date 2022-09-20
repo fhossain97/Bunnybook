@@ -22,7 +22,7 @@ const [ posts, setPosts  ] = useState([])
 const [user , setUser ] = useState({})
 
   useEffect(() => {
-    fetch('http://localhost:8000/bunnybook/posts/')
+    fetch('https://bunnyback.herokuapp.com/bunnybook/posts/')
     .then( res => res.json())
     .then( posts => setPosts(posts))
   }, [])
