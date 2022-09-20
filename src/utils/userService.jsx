@@ -1,5 +1,5 @@
 import tokenService from "./tokenService";
-const BASE_URL = 'https://bunnyback.herokuapp.com/';
+const BASE_URL = 'https://bunnyback.herokuapp.com/users/';
 
 function signup(user) {
   return fetch(BASE_URL + 'register/', {
