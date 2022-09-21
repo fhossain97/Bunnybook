@@ -1,7 +1,11 @@
 # Bunnybook
 Bunnybook is a playful take on the ever so popular Facebook. Instead of connecting humans together, Bunnybook connects all bunnies together. Each bunny will be able to create their own user profile in order to post statuses, upload images, and comment on posts from all users (including their own). Additionally, bunny users will be able to update and delete their posts and comments as needed. Authentication (login/logout) will also be included for all users.
 
-Heroku Link: 
+# Links
+Github Front-End: https://github.com/fhossain97/Bunnybook
+Github Back-End: https://github.com/fhossain97/BB-backend
+Heroku Front-End: https://bunnyfront.herokuapp.com/
+Heroku Back-End: https://bunnyback.herokuapp.com/
 
 # Technologies 
 - Frontend: React
