@@ -55,7 +55,7 @@ const Sidebar = () => {
 <span className="sblistitemtext">Learning Courses</span>
 </li>
 </ul>
-<button classname="sbbutton">
+<button className="sbbutton">
     More Options
 </button>
 <hr className="sbhr"/>

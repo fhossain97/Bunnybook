@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import Home from './pages/Home/Home.jsx'
@@ -12,9 +11,6 @@ import Profile from './components/Profile/Profile.jsx'
 import Status from './pages/Status.jsx'
 
 
-
-
-
 const App = () => {
   let navigate = useNavigate()
 
@@ -22,7 +18,7 @@ const [ posts, setPosts  ] = useState([])
 const [user , setUser ] = useState({})
 
   useEffect(() => {
-    fetch('https://bunnyback.herokuapp.com/bunnybook/posts/')
+    fetch('http://localhost:8000/bunnybook/posts/')
     .then( res => res.json())
     .then( posts => setPosts(posts))
   }, [])

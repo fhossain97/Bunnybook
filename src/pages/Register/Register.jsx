@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import userService from "../../utils/userService";
 import '../Login/Login.css'
 
@@ -20,7 +20,7 @@ const Register = ({ handleSignupOrLogin }) => {
     e.preventDefault();
     try {
       await userService.signup(formData);
-      // handleSignupOrLogin();
+      //handleSignupOrLogin();
       navigate("/login");
     } catch (err) {
       console.log(err)
