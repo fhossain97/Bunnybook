@@ -47,13 +47,15 @@ const [user , setUser ] = useState({})
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
       
     <Routes>
+    <Route path='/login' element={ <Login handleSignupOrLogin={handleSignupOrLogin}
+              setUser={setUser} />} />
+    <Route path="/register" element={<Register />} />
         <Route path='/' element={ <Home posts={posts} updatePostState={updatePostState} user={ user} />} />
         <Route path='/new-post' element={ <Status addToPost={addToPost}  /> } />
         <Route path='/posts/edit/:id' element={ <PostEdit  setPosts={setPosts} posts={posts}/> } />
         <Route path='/posts/:id' element={ <PostView posts={posts}/>} updatePostState={updatePostState}  />
-        <Route path='/login' element={ <Login handleSignupOrLogin={handleSignupOrLogin}
-              setUser={setUser} />} />
-        <Route path="/register" element={<Register />} />
+       
+        
         <Route path="/profile" element={<Profile posts={posts} updatePostState={updatePostState} user={ user}/>} />
         {/* <Route path="/message" element={<Chat />} /> */}
     </Routes>

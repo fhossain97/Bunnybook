@@ -20,7 +20,7 @@ const Register = ({ handleSignupOrLogin }) => {
     e.preventDefault();
     try {
       await userService.signup(formData);
-      //handleSignupOrLogin();
+      console.log(formData, 'this is the form data')
       navigate("/login");
     } catch (err) {
       console.log(err)
@@ -74,7 +74,7 @@ const Register = ({ handleSignupOrLogin }) => {
               placeholder="Re-type Password"
               onChange={handleChange}
             />
-             <button className="signupbutton">Create a New Account</button>
+             <button type='submit' className="signupbutton">Create a New Account</button>
             
           </form>
         </div>

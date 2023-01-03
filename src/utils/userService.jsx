@@ -1,5 +1,5 @@
 import tokenService from "./tokenService";
-const BASE_URL = 'http://localhost:8000/bunnybook/users/';
+const BASE_URL = 'http://localhost:8000/bunnybook/';
 
 function signup(user) {
   return fetch(BASE_URL + 'register/', {

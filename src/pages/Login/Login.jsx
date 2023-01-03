@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link} from "react-router-dom";
 import userToken from "../../utils/userService";
-// import "./Login.css";
+import "./Login.css";
 
 const Login = ({ handleSignupOrLogin }) => {
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ const Login = ({ handleSignupOrLogin }) => {
               Log In
             </button>
             
-            <button className="signupbutton"><Link to="/register">
+            <button className="signupbutton"><Link to="/register" style={{ textDecoration: 'none' }}>
               Create a New Account</Link>
             </button>
          
