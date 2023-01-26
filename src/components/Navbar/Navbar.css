@@ -1,0 +1,81 @@
+.navbarContainer {
+    height:50px;
+    width: 100%;
+    background-color: #3b5998;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbarLeft{
+    flex: 3;
+
+}
+
+.navbarCenter{
+    flex: 5;
+}
+
+
+.navbarRight{
+    flex: 4;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+.navbarProfilePic{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 25px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+
+.navbarLink{
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.navbarIcons{
+    display: flex;
+}
+
+.navbarIcon{
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbarIconNotification{
+    width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+
+}
+
+.loginandregister{
+    margin-right: 10px;
+}

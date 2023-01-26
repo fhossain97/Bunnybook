@@ -1,0 +1,170 @@
+.post{
+    width: 100%;
+    height: 170px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+}
+
+.pwrapper{
+    padding: 10px; 
+}
+
+.top{
+    display: flex;
+    align-items: center; 
+}
+
+.pprofilepic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.postInput{
+    border: none;
+    width: 80%;
+}
+
+.postInput:focus{
+outline:none;
+}
+
+.posthr{
+    margin: 20px;
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options{
+    display: flex;
+    margin-left: 20px;
+}
+
+.option{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.posticon{
+    font-size: 18px;
+    margin-right: 3px;
+}
+
+.optionpost{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.shareButton{
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: green;
+    font-weight: 500;
+    margin-right: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.pbutton{
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: green;
+    font-weight: 500;
+    margin-right: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.content {
+    width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin: 30px 0;  
+}
+
+.cwrapper{
+    padding: 10px;  
+}
+
+.ctop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topleft{
+    display: flex;
+    align-items: center; 
+}
+
+.cpic{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cusername{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.cdate{
+    font-size: 12px;
+}
+
+.ccenter{
+    margin: 20px 0;
+}
+
+.cimg{
+    margin-top: 20px;
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.cbottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cbottomleft{
+    display: flex;
+    align-items: center;   
+}
+
+.cicon{
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.like, .dislike {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.commenttext{
+    cursor: pointer;
+    border-bottom: 1px dashed gray;
+    font-size: 15px;
+}
