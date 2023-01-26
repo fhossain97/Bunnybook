@@ -1,6 +1,6 @@
 import tokenService from "./tokenService";
 import axios from 'axios'
-const BASE_URL = `http://localhost:8000/bunnybook/`;
+const BASE_URL = `${process.env.REACT_APP_API}/`;
 
 // function signup(user) {
 //   return fetch(BASE_URL + 'register/', {

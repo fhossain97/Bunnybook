@@ -17,7 +17,7 @@ const Navbar = ({ user, handleLogout }) => {
  let token = localStorage.getItem('token')
 
   useEffect(() => {
-    fetch(`${process.env.REACT_API}/posts/`)
+    fetch(`${process.env.REACT_APP_API}/posts/`)
       .then(res => res.json())
       .then(post => setPosts(post));
   }, []);

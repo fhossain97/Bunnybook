@@ -25,15 +25,17 @@ const Status = ({addToPost}) => {
     e.preventDefault();
     const media = new FormData();
     media.append("file", formData.file);
-    // media.append("name", formData.name);
     media.append("status_body", formData.status_body);
     media.append("date", formData.date);
     console.log(formData)
-    axios.post("http://localhost:8000/bunnybook/posts/", media)
+
+
+    axios.post(`${process.env.REACT_APP_API}/posts/`, media)
     .then((res) => {
       console.log(media)
       setFormData(initialState);
       addToPost(res.data);
+ 
       navigate("/", { replace: true });
     });
   };

@@ -1,10 +1,9 @@
 import './Post.css'
-// import React, {useState, useEffect} from 'react'
+
 import { Link} from 'react-router-dom'
-// import { Link, useParams, useNavigate } from 'react-router-dom'
-// import axios from "axios";
+
 import {MoreVert} from "@mui/icons-material";
-// import {Users} from '../../seeds/Seeds'
+
 
 const Post = ({ post, deletePost, user, id }) => {
 
@@ -33,6 +32,7 @@ const Post = ({ post, deletePost, user, id }) => {
     //        },[user.authority]) 
 
 
+
   return (
     <div className="content" key={id}>
 <div className="cwrapper">
@@ -44,8 +44,8 @@ const Post = ({ post, deletePost, user, id }) => {
     <span className="cdate">{post.date}</span>
     </div>
     <div className="topright"></div>
-    
-<MoreVert />
+    <Link to={`/posts/${id}`}><MoreVert /> </Link> 
+
     </div>
     <div className="ccenter">
     <span className="ctext">{post.status_body}</span>
@@ -59,19 +59,19 @@ const Post = ({ post, deletePost, user, id }) => {
       )  : null
   } */}
 
-  <Link to={`/posts/${id}`}>View Details</Link>
+
  
     </div>
     <div className="cbottom">
-{/* <div className="cbottomleft">
-<img className="cicon" alt='iconpic' src='/assets/icons/like.png' onClick={likeHandler} />
+ <div className="cbottomleft">
+{/* <img className="cicon" alt='iconpic' src='/assets/icons/like.png' onClick={likeHandler} />
 <img className="cicon" alt='iconpic' src='/assets/icons/dislike.png' onClick={dislikeHandler} />
 <span className="like">{like} liked</span>
-<span className="dislike">{dislike} disliked</span>
+<span className="dislike">{dislike} disliked</span> */}
 </div>
 <div className="cbottomright">
-<span className="commenttext">{post.comments} comments</span>
-</div> */}
+{/* <span className="commenttext">{post.comments} comments</span> */}
+</div>
     </div>
 </div>
 

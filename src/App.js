@@ -19,7 +19,7 @@ const [user , setUser ] = useState([])
 
 
   useEffect(() => {
-    fetch('http://localhost:8000/bunnybook/posts/')
+    fetch(`${process.env.REACT_APP_API}/posts/`)
     .then( res => res.json())
     .then( posts => setPosts(posts))
   }, [])

@@ -25,12 +25,12 @@ const PostEdit = ({ setPosts, posts }) => {
     e.preventDefault();
     const media = new FormData();
     media.append("file", formData.file);
-    // media.append("name", formData.name);
+
     media.append("status_body", formData.status_body);
     media.append("date", formData.date);
 
     axios
-      .put(`${process.env.REACT_API}/posts/${id}/`, media)
+      .put(`${process.env.REACT_APP_API}/posts/${id}/`, media)
       .then((res) => {
         console.log(res.data)
         setFormData(initialState);
@@ -40,7 +40,7 @@ const PostEdit = ({ setPosts, posts }) => {
   };
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_API}/posts/${id}/`).then((res) => {
+    axios.get(`${process.env.REACT_APP_API}/posts/${id}/`).then((res) => {
       setFormData(res.data)
       console.log(res.data)
     });

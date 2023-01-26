@@ -11,7 +11,7 @@ const PostView = ({posts, updatePostState}) => {
         let navigate = useNavigate()
         
         const deletePost = (id) => {
-        axios.delete(`${process.env.REACT_API}/posts/${post.id}/`).then((res) => {
+        axios.delete(`${process.env.REACT_APP_API}/posts/${post.id}/`).then((res) => {
           console.log(res);
           updatePostState(id);
           return navigate("/")
@@ -22,7 +22,7 @@ const PostView = ({posts, updatePostState}) => {
       const [ post, setPost ] = useState()
 
 useEffect(() => {
-fetch(`${process.env.REACT_API}/posts/${id}/`)
+fetch(`${process.env.REACT_APP_API}/posts/${id}/`)
         .then(res => res.json())
         .then(data => setPost(data))
     })
