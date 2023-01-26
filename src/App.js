@@ -10,6 +10,7 @@ import Register from './pages/Register/Register.jsx'
 import Profile from './components/Profile/Profile.jsx'
 import Status from './pages/Status.jsx'
 
+/////testing to see if i get git gc error
 
 const App = () => {
   let navigate = useNavigate()
