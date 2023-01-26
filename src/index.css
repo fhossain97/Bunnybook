@@ -15,3 +15,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#viewbtn{
+  margin-right: 15px;
+} 
+
+#viewctn{
+  margin: 45px;
+}

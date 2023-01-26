@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors:{
+'fb-blue': '#3b5998',
+'white': '#fff'
+    },
   },
   plugins: [],
 }

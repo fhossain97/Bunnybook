@@ -40,19 +40,19 @@ const Navbar = ({ user, handleLogout }) => {
       </div>
       <div className="navbarRight">
         <div className="navbarLinks">
-          <Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+          <Link to="/" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
             <span className="navbarLink"><CottageIcon/> Home</span>{" "}
           </Link>
         </div>
         
         <div className="navbarLinks">
-          <Link to="/message" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+          <Link to="/message" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
             <span className="navbarLink"><ChatBubbleOutlineIcon />Chat</span>{" "}
           </Link>
         </div>
 
         <div className="navbarLinks">
-          <Link to="/profile" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+          <Link to="/profile" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
             <span className="navbarLink"> <AccountCircleIcon /> Profile</span>{" "}
           </Link>
         </div>
@@ -61,7 +61,7 @@ const Navbar = ({ user, handleLogout }) => {
       </div>
 
       <div className="navbarLinks">
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      <button className=" px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
       <Link to="" style={{textDecoration: 'none'}} onClick={handleLogout}>
            <LogoutIcon/> {user} Log Out
               </Link>
@@ -80,13 +80,13 @@ const Navbar = ({ user, handleLogout }) => {
   ) : (
     <div className="navbarContainer">
     <div className="loginandregister">
-          <Link to="/register" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+          <Link to="/register" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
             <span className="navbarLink"> <AppRegistrationIcon/>Register</span>{" "}
           </Link>
         </div>
 
 <div className="loginandregister">
-<Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+<Link to="/login" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
   <span className="navbarLink">
     <LoginIcon/> Login</span>{" "}
 </Link>

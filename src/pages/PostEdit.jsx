@@ -51,31 +51,6 @@ const PostEdit = ({ setPosts, posts }) => {
     setFormData({ ...formData, [e.target.id]: e.target.files[0] });
   };
 
- 
-
-    // let {id} = useParams()
-
-
-// const [comment, setComment] = useState('')
-// const [newComment, setNewComment] = useState('')
-
-// const handleNewComment = (e)=> {
-//   e.preventDefault()
-//   setComment([...comment, newComment])
-//   setNewComment('');
-// }
-
-
-// const handleNewCommentUpdate = (e) => {
-//     setNewComment(e.target.value);
-// }
-
-// const CommentDelete = (id) => {
-//   axios.delete(`http://localhost:8000/bunnybook/posts/${id}/comments/${id}`).then((res) => {
-//     updateComment(id);
-//     return navigate("/")
-//   })
-// }
 
   return (
     <div className="lright">
