@@ -10,7 +10,7 @@ const PostEdit = ({ setPosts, posts }) => {
 
   const initialState = {
     status_body: "",
-    date: "",
+    // date: "",
     file: "",
   };
 
@@ -27,7 +27,7 @@ const PostEdit = ({ setPosts, posts }) => {
     media.append("file", formData.file);
 
     media.append("status_body", formData.status_body);
-    media.append("date", formData.date);
+    // media.append("date", formData.date);
 
     axios
       .put(`${process.env.REACT_APP_API}/posts/${id}/`, media)
@@ -68,7 +68,7 @@ const PostEdit = ({ setPosts, posts }) => {
         value={formData.status_body}
         onChange={handleChange}
       />
-      <input
+      {/* <input
         className="linput"
         id="date"
         name="date"
@@ -76,7 +76,7 @@ const PostEdit = ({ setPosts, posts }) => {
         value={formData.date}
         placeholder="Date"
         onChange={handleChange}
-      />
+      /> */}
 
       <input
         className="linput"

@@ -10,7 +10,7 @@ import Register from './pages/Register/Register.jsx'
 import Profile from './components/Profile/Profile.jsx'
 import Status from './pages/Status.jsx'
 
-/////testing to see if i get git gc error
+
 
 const App = () => {
   let navigate = useNavigate()
@@ -31,7 +31,7 @@ const [user , setUser ] = useState([])
   }
 
   const updatePostState = (id) => {
-      setPosts(posts.filter(post=> post._id !== id))
+      setPosts(posts.filter((idx, post)=> post._id !== id))
   }
   const handleSignupOrLogin = () => {
     setUser(userService.getUser());

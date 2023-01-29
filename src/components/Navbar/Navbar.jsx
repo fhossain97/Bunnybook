@@ -47,7 +47,7 @@ const Navbar = ({ user, handleLogout }) => {
         
         <div className="navbarLinks">
           <Link to="/message" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-            <span className="navbarLink"><ChatBubbleOutlineIcon />Chat</span>{" "}
+            <span className="navbarLink"><ChatBubbleOutlineIcon />Messenger</span>{" "}
           </Link>
         </div>
 

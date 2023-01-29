@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {PermMedia,CalendarToday, Room, EmojiEmotions} from "@mui/icons-material";
+import {PermMedia} from "@mui/icons-material";
 import axios from "axios";
 import { useNavigate} from "react-router-dom";
 
@@ -7,7 +7,7 @@ import { useNavigate} from "react-router-dom";
 const Status = ({addToPost}) => {
   const initialState = {
     status_body : "",
-    date : "",
+    // date : "",
     file : "",
   };
 
@@ -26,7 +26,7 @@ const Status = ({addToPost}) => {
     const media = new FormData();
     media.append("file", formData.file);
     media.append("status_body", formData.status_body);
-    media.append("date", formData.date);
+    // media.append("date", formData.date);
     console.log(formData)
 
 
@@ -70,7 +70,7 @@ const Status = ({addToPost}) => {
         <div className="options">
             <div className="option">
                 <PermMedia htmlColor='red' className="posticon" />
-                <span className="optionpost">Media</span>
+                <span className="optionpost">Photo</span>
                 <input
             className="linput"
             name="file"
@@ -82,7 +82,7 @@ const Status = ({addToPost}) => {
 
             </div>
 
-            <div className="option">
+            {/* <div className="option">
                 <CalendarToday htmlColor='blue' className="posticon" />
                 <input
             className="linput"
@@ -93,15 +93,8 @@ const Status = ({addToPost}) => {
             onChange={handleChange}
           />
 
-            </div>
-            <div className="option">
-                <Room htmlColor='green' className="posticon" />
-                <span className="optionpost">Location</span>
-            </div>
-            <div className="option">
-                <EmojiEmotions htmlColor='purple' className="posticon" />
-                <span className="optionpost">Like or Dislike</span>
-            </div>
+            </div>  */}
+
         </div>
         <button id="new" type="submit" className="pbutton"> Share </button>
     </div>
