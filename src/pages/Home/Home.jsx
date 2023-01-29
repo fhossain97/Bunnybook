@@ -7,38 +7,40 @@ import { useState, useEffect } from 'react'
 
 import './Home.css'
 
-const Home = ({ posts, updatePostState, user , updatedNews}) => {
-  const [news, setNews] = useState("");
+const Home = ({ posts, updatePostState, user}) => {
+  const [news, setNews] = useState([]);
   const newsUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=f0788f39cf2248c294d082d3cf6af917";
 
-const getNewsApi = async (data) => {
+// const getNewsApi = async (data) => {
 
-  try {
-    const request = await fetch(newsUrl);
-    const dataJson = await request.json();
-    if (data) {
-      setNews(dataJson.articles[0].urlToImage);
-    } else {
-      console.log("Did not get API");
-    }
-  }catch(err){
-    console.log(err, 'This is the error from API')
-  }
+//     const request = await fetch(newsUrl);
+//     const dataJson = await request.json();
+//     if (data) {
+//       setNews(dataJson.articles[0].urlToImage);
+//     } else {
+//       console.log('No API')
+//     }
+  
    
-  };
+//   };
 
-  useEffect(() => {
-    getNewsApi();
-  }, []);
+//   useEffect(() => {
+//     getNewsApi();
+//   }, [news]);
 
 
-// const getNews = (data) => {
-//   axios.get(newsUrl)
-//   .then(newsdata => {
-//       console.log(newsdata)
-//       updatedNews(data)
-//   },[])
-// }
+
+useEffect(() => {
+  fetch(newsUrl)
+  .then( res => res.json())
+  .then( data => {
+    console.log(data)
+    setNews(data.articles[0].urlToImage)})
+}, [])
+
+
+
+
 
   return (
     <div className="homefeed">
@@ -49,6 +51,7 @@ const getNewsApi = async (data) => {
       <Posts posts={posts} updatePostState={updatePostState}  user={user} />
 
         </div>
+        
 
  <RightBar  news={news}/>
      

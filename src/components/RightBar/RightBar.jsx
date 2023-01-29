@@ -4,7 +4,6 @@ import "./RightBar.css";
 export default function Rightbar({news}) {
 
 
-console.log(news)
 
   const Newsbar = () => {
     return (
@@ -19,6 +18,7 @@ console.log(news)
             <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
           </span>
         </div>
+        
         <img className="rightbarAd" src={news}  alt="" />
         <h4 className="rightbarTitle">Online Friends</h4>
       </>
