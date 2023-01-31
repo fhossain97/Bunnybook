@@ -1,31 +1,22 @@
+import Posts from "../../components/Post/Posts";
+import Status from "../Status";
+import LeftBar from "../../components/LeftBar/LeftBar";
+import RightBar from "../../components/RightBar/RightBar";
+import "./Home.css";
 
-import Posts from '../../components/Post/Posts'
-import Status from '../Status'
-import LeftBar from '../../components/LeftBar/LeftBar'
-import RightBar from '../../components/RightBar/RightBar'
-
-
-import './Home.css'
-
-const Home = ({ posts, updatePostState, user, news}) => {
- 
-
-
+const Home = ({ posts, updatePostState, user }) => {
   return (
     <div className="homefeed">
       <LeftBar />
 
       <div className="hfwrapper">
-<Status />
-      <Posts posts={posts} updatePostState={updatePostState}  user={user} />
+        <Status />
+        <Posts posts={posts} updatePostState={updatePostState} user={user} />
+      </div>
 
-        </div>
-        
-
- <RightBar news={news} />
-     
+      <RightBar />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
