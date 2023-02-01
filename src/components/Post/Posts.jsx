@@ -19,7 +19,7 @@ console.log(posts)
     <div>
         { 
           posts.length === 0 ? 'No Post Available' :  (posts?.map( post => {
-                return <Post id={post.id} post={post} deletePost={deletePost} user={user}/>
+                return <Post key={post.id} id={post.id} post={post} deletePost={deletePost} user={user}/>
             }))
         }
     </div>

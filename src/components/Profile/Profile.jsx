@@ -1,12 +1,15 @@
 import React from "react";
 import "./Profile.css";
 import Posts from "../Post/Posts";
+import LeftBar from '../LeftBar/LeftBar'
+import RightBar from "../RightBar/RightBar";
 
 // import Status from "../../pages/Status";
 
 const Profile = ({ posts, updatePostState, user }) => {
   return (
     <div className="profileindv">
+      <LeftBar />
      
       <div className="proright">
         <div className="prorighttop">
@@ -25,6 +28,7 @@ const Profile = ({ posts, updatePostState, user }) => {
 
         </div>
       </div>
+      <RightBar />
     </div>
   );
 };
