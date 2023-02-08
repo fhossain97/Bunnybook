@@ -4,6 +4,7 @@ import Posts from "../Post/Posts";
 import LeftBar from '../LeftBar/LeftBar'
 import RightBar from "../RightBar/RightBar";
 
+
 // import Status from "../../pages/Status";
 
 const Profile = ({ posts, updatePostState, user }) => {
@@ -14,8 +15,8 @@ const Profile = ({ posts, updatePostState, user }) => {
       <div className="proright">
         <div className="prorighttop">
             <div className="procover">
-            <img src='/assets/cover/carrots.jpg' className='coverimg' alt=''/>
-            <img src='/assets/friends/friend1.jpg' className='userimg' alt=''/>
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx9lUflOcfsogKTqudWbF652aBpLsM9MKgQA&usqp=CAU' className='coverimg' alt=''/>
+            <img src='https://images7.alphacoders.com/324/324176.jpg' className='userimg' alt=''/>
             </div>
             <div className="proinfo">
                 <h4 className="userinfoname">Farhana Hossain</h4>
@@ -28,7 +29,7 @@ const Profile = ({ posts, updatePostState, user }) => {
 
         </div>
       </div>
-      <RightBar />
+      <RightBar/>
     </div>
   );
 };
