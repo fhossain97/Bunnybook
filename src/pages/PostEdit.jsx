@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import axios from 'axios'
-
-
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const PostEdit = ({ setPosts, posts }) => {
   let { id } = useParams();
@@ -10,7 +8,6 @@ const PostEdit = ({ setPosts, posts }) => {
 
   const initialState = {
     status_body: "",
-    // date: "",
     file: "",
   };
 
@@ -25,14 +22,11 @@ const PostEdit = ({ setPosts, posts }) => {
     e.preventDefault();
     const media = new FormData();
     media.append("file", formData.file);
-
     media.append("status_body", formData.status_body);
-    // media.append("date", formData.date);
 
     axios
-      .put(`${process.env.REACT_APP_API}/posts/${id}/`, media)
+      .put(`${process.env.REACT_APP_API}/posts/${id}/`, formData)
       .then((res) => {
-        console.log(res.data)
         setFormData(initialState);
         setPosts([...posts, res.data]);
         navigate("/", { replace: true });
@@ -41,61 +35,47 @@ const PostEdit = ({ setPosts, posts }) => {
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API}/posts/${id}/`).then((res) => {
-      setFormData(res.data)
-      console.log(res.data)
+      setFormData(res.data);
     });
   }, [id]);
 
   const handleFile = (e) => {
-    console.log(e.target);
     setFormData({ ...formData, [e.target.id]: e.target.files[0] });
   };
 
-
   return (
     <div className="lright">
-    <form
-      onSubmit={handleSubmit}
-      encType="multipart/form-data"
-      className="lbox"
-    >
-      <input
-        id="status_body"
-        name="status_body"
-        type="text"
-        className="linput"
-        placeholder="Post"
-        value={formData.status_body}
-        onChange={handleChange}
-      />
-      {/* <input
-        className="linput"
-        id="date"
-        name="date"
-        type="date"
-        value={formData.date}
-        placeholder="Date"
-        onChange={handleChange}
-      /> */}
+      <form
+        onSubmit={handleSubmit}
+        encType="multipart/form-data"
+        className="lbox"
+      >
+        <input
+          id="status_body"
+          name="status_body"
+          type="text"
+          className="linput"
+          placeholder="Post"
+          value={formData.status_body}
+          onChange={handleChange}
+        />
+        <input
+          className="linput"
+          name="file"
+          id="file"
+          type="file"
+          accept="image/*"
+   
+          onChange={handleFile}
+        />
 
-      <input
-        className="linput"
-        name="file"
-        id="file"
-        type="file"
-        // value={formData.file}
-        accept="video/*,image/*"
-        onChange={handleFile}
-      />
-
-      <button type="submit" className="signupbutton">
-        {" "}
-        Edit Post{" "}
-      </button>
-    </form>
-  </div>
-);
+        <button type="submit" className="signupbutton">
+          {" "}
+          Edit Post{" "}
+        </button>
+      </form>
+    </div>
+  );
 };
 
-
-export default PostEdit
+export default PostEdit;

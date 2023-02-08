@@ -4,13 +4,13 @@ import LeftBar from "../../components/LeftBar/LeftBar";
 import RightBar from "../../components/RightBar/RightBar";
 import "./Home.css";
 
-const Home = ({ posts, updatePostState, user }) => {
+const Home = ({ posts, updatePostState, user , addPost}) => {
   return (
     <div className="homefeed">
       <LeftBar />
 
       <div className="hfwrapper">
-        <Status />
+        <Status addPost={addPost}  />
         <Posts posts={posts} updatePostState={updatePostState} user={user} />
       </div>
 

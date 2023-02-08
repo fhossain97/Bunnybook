@@ -3,14 +3,14 @@ import axios from "axios";
 import Post from "./Post";
 
 
-const Posts = ({ posts, updatePostState, user }) => {
+const Posts = ({ posts, updatePostState, user, }) => {
 
       const deletePost= (id) => {
         axios.delete(`${process.env.REACT_APP_API}/posts/${id}/`)
         .then(res => {
             console.log(res)
             updatePostState(id)
-        },[id])
+        })
     }
 console.log(posts)
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const PostView = ({ updatePostState }) => {
+const PostView = ({updatePostState }) => {
   let navigate = useNavigate();
 
   const deletePost = (id) => {
@@ -10,8 +10,8 @@ const PostView = ({ updatePostState }) => {
       .delete(`${process.env.REACT_APP_API}/posts/${post.id}/`)
       .then((res) => {
         console.log(res);
-        updatePostState(id);
-        return navigate("/posts");
+        updatePostState(post.id);
+        return navigate("/");
       });
   };
 
@@ -22,7 +22,7 @@ const PostView = ({ updatePostState }) => {
     fetch(`${process.env.REACT_APP_API}/posts/${id}/`)
       .then((res) => res.json())
       .then((data) => setPost(data));
-  });
+  },[id]);
 
   return (
     <div>
@@ -54,7 +54,7 @@ const PostView = ({ updatePostState }) => {
                   id="viewbtn"
                   type="button"
                   className=" inline-block px-6 py-2.5 bg-fb-blue text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                  onClick={() => deletePost(post._id)}
+                  onClick={() => deletePost(post.id)}
                 >
                   Delete
                 </button>

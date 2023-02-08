@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const Status = ({ addToPost }) => {
+const Status = ({ addPost }) => {
   const initialState = {
     status_body: "",
-    // date : "",
+ 
     file: "",
   };
 
@@ -25,14 +25,13 @@ const Status = ({ addToPost }) => {
     const media = new FormData();
     media.append("file", formData.file);
     media.append("status_body", formData.status_body);
-    // media.append("date", formData.date);
+  
     console.log(formData);
 
-    axios.post(`${process.env.REACT_APP_API}/posts/`, media).then((res) => {
-      console.log(media);
+    axios.post(`${process.env.REACT_APP_API}/posts/`, media)
+    .then((res) => {
       setFormData(initialState);
-      addToPost(res.data);
-
+      addPost(res.data);
       navigate("/", { replace: true });
     });
   };
@@ -75,23 +74,11 @@ const Status = ({ addToPost }) => {
                   name="file"
                   id="file"
                   type="file"
-                  accept="video/*,image/*"
+                  accept="image/*"
                   onChange={handleFile}
                 />
               </div>
 
-              {/* <div className="option">
-                <CalendarToday htmlColor='blue' className="posticon" />
-                <input
-            className="linput"
-            id="date"
-            name="date"
-            type="date"
-            placeholder="Date"
-            onChange={handleChange}
-          />
-
-            </div>  */}
             </div>
             <button id="new" type="submit" className="pbutton">
               {" "}

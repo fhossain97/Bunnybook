@@ -1,38 +1,34 @@
-import { useState, useEffect } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import Home from './pages/Home/Home.jsx'
-import Layout from './components/Layout'
-import PostView from './pages/PostView'
-import PostEdit from './pages/PostEdit'
-import userService from './utils/userService.jsx'
-import Login from './pages/Login/Login.jsx'
-import Register from './pages/Register/Register.jsx'
-import Profile from './components/Profile/Profile.jsx'
-import Status from './pages/Status.jsx'
-
-
+import { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Home from "./pages/Home/Home.jsx";
+import Layout from "./components/Layout";
+import PostView from "./pages/PostView";
+import PostEdit from "./pages/PostEdit";
+import userService from "./utils/userService.jsx";
+import Login from "./pages/Login/Login.jsx";
+import Register from "./pages/Register/Register.jsx";
+import Profile from "./components/Profile/Profile.jsx";
+import Status from "./pages/Status.jsx";
 
 const App = () => {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
-const [ posts, setPosts  ] = useState([])
-const [user , setUser ] = useState([])
-
+  const [posts, setPosts] = useState([]);
+  const [user, setUser] = useState();
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/posts/`)
-    .then( res => res.json())
-    .then( posts => setPosts(posts))
-  }, [])
-  
-  
-  const addToPost = (post) => {
-     setPosts([...posts, post])
-  }
+      .then((res) => res.json())
+      .then((posts) => setPosts(posts));
+  }, []);
+
+  const addPost = (post) => {
+    setPosts([...posts, post]);
+  };
 
   const updatePostState = (id) => {
-      setPosts(posts.filter((idx, post)=> post._id !== id))
-  }
+    setPosts(posts.filter((idx, post) => post._id !== id));
+  };
   const handleSignupOrLogin = () => {
     setUser(userService.getUser());
   };
@@ -40,32 +36,54 @@ const [user , setUser ] = useState([])
   const handleLogout = () => {
     userService.logout();
     setUser(null);
-    navigate("/login")
+    navigate("/login");
   };
-
-
 
   return (
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
-      
-    <Routes>
-    <Route path='/login' element={ <Login handleSignupOrLogin={handleSignupOrLogin}
-              setUser={setUser} />} />
-    <Route path="/register" element={<Register />} />
-        <Route path='/' element={ <Home posts={posts} updatePostState={updatePostState} user={ user} />} />
-        <Route path='/new-post' element={ <Status addToPost={addToPost}  /> } />
-        <Route path='/posts/edit/:id' element={ <PostEdit  setPosts={setPosts} posts={posts}/> } />
-        <Route path='/posts/:id' element={ <PostView posts={posts}/>} updatePostState={updatePostState}  />
-       
-        
-        <Route path="/profile" element={<Profile posts={posts} updatePostState={updatePostState} user={ user}/>} />
+      <Routes>
+        <Route
+          path="/login"
+          element={
+            <Login
+              handleSignupOrLogin={handleSignupOrLogin}
+              setUser={setUser}
+            />
+          }
+        />
+        <Route path="/register" element={<Register />} />
+        <Route
+          path="/"
+          element={
+            <Home posts={posts} updatePostState={updatePostState} user={user} addPost={addPost}/>
+          }
+        />
+        <Route path="/" element={<Status addPost={addPost} />} />
+
+        <Route
+          path="/posts/edit/:id"
+          element={<PostEdit setPosts={setPosts} posts={posts} updatePostState={updatePostState} />}
+        />
+        <Route
+          path="/posts/:id"
+          element={<PostView posts={posts} updatePostState={updatePostState} />}
+         
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <Profile
+              posts={posts}
+              updatePostState={updatePostState}
+              user={user}
+            />
+          }
+        />
         {/* <Route path="/message" element={<Chat />} /> */}
-    </Routes>
+      </Routes>
+    </Layout>
+  );
+};
 
-  
-    
-  </Layout>
-  )
-}
-
-export default App
+export default App;
