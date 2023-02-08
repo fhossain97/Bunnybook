@@ -14,18 +14,21 @@ const PostEdit = ({ setPosts, posts }) => {
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
-    console.log(e.target);
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
+
+  const handleFile = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.files[0] });
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const media = new FormData();
     media.append("file", formData.file);
     media.append("status_body", formData.status_body);
-
     axios
-      .put(`${process.env.REACT_APP_API}/posts/${id}/`, formData)
+      .put(`${process.env.REACT_APP_API}/posts/${id}/`, media)
       .then((res) => {
         setFormData(initialState);
         setPosts([...posts, res.data]);
@@ -33,15 +36,13 @@ const PostEdit = ({ setPosts, posts }) => {
       });
   };
 
+
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API}/posts/${id}/`).then((res) => {
       setFormData(res.data);
     });
   }, [id]);
 
-  const handleFile = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.files[0] });
-  };
 
   return (
     <div className="lright">
@@ -60,12 +61,16 @@ const PostEdit = ({ setPosts, posts }) => {
           onChange={handleChange}
         />
         <input
+        
+
+     
+        
           className="linput"
           name="file"
           id="file"
           type="file"
           accept="image/*"
-   
+        filename=''
           onChange={handleFile}
         />
 
