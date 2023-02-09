@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { PermMedia } from "@mui/icons-material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -67,16 +66,21 @@ const Status = ({ addPost }) => {
           <div className="bottom">
             <div className="options">
               <div className="option">
-                <PermMedia htmlColor="red" className="posticon" />
-                <span className="optionpost">Photo</span>
-                <input
-                  className="linput"
-                  name="file"
+        
+                <input className="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-pink-50 file:text-pink-700
+      hover:file:bg-pink-100
+    "
+    name="file"
                   id="file"
                   type="file"
                   accept="image/*"
-                  onChange={handleFile}
-                />
+                  onChange={handleFile}/>
+            
+          
               </div>
 
             </div>

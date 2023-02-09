@@ -8,7 +8,7 @@ import userService from "./utils/userService.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 import Profile from "./components/Profile/Profile.jsx";
-import Status from "./pages/Status.jsx";
+import Chat from "./pages/Chat.jsx";
 
 const App = () => {
   let navigate = useNavigate();
@@ -58,7 +58,7 @@ const App = () => {
             <Home posts={posts} updatePostState={updatePostState} user={user} addPost={addPost}/>
           }
         />
-        <Route path="/" element={<Status addPost={addPost} />} />
+      
 
         <Route
           path="/posts/edit/:id"
@@ -80,7 +80,7 @@ const App = () => {
             />
           }
         />
-        {/* <Route path="/message" element={<Chat />} /> */}
+        <Route path="/message" element={<Chat />} />
       </Routes>
     </Layout>
   );
