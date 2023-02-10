@@ -1,33 +1,19 @@
+import ChatNav from "./ChatNav"
 
-import { initializeApp } from "firebase/app";
-
-
-const firebaseConfig = {
-  apiKey: "AIzaSyB8La2OtBP6YsU1a68FAXg9dPf4SF6OAic",
-  authDomain: "bunnybook-1e656.firebaseapp.com",
-  projectId: "bunnybook-1e656",
-  storageBucket: "bunnybook-1e656.appspot.com",
-  messagingSenderId: "116032419897",
-  appId: "1:116032419897:web:cba757539f5bb05ab875e8",
-  measurementId: "G-D0V8WKQ32W"
-};
-
-
-const app = initializeApp(firebaseConfig);
+const messengerStyle = {
+  chatcontainer: `border-8 border-solid border-blue-700 w-[100%] h-[100vh]`,
+  sectioncontainer : `border-8 border-red-600 w-[50%] h-[100%]`
+}
 
 
 const ChatBox = () => {
   return (
-    <div>
+    <div className={messengerStyle.chatcontainer}>
+     <section className={messengerStyle.sectioncontainer}>
+      <ChatNav />
       
-{/* <ChatEngine offset={-4}
-      height='100vh'
-      userName='MoonMoon'
-      projectID = {process.env.REACT_APP_CHAT_APP_PROJECT_ID}
-      userSecret={process.env.REACT_APP_CHAT_APP_USER_SECRET}
-     
-    /> */}
-heyyyy girl
+      
+      </section> 
     </div>
   )
 }
