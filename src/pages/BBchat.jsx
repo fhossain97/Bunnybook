@@ -1,7 +1,7 @@
 import React from 'react'
 import ChatBox from '../components/Messenger/ChatBox'
 
-const Chat = () => {
+const BBchat = () => {
   return (
     <div>
         <ChatBox />
@@ -9,4 +9,4 @@ const Chat = () => {
   )
 }
 
-export default Chat
+export default BBchat

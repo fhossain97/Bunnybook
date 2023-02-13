@@ -1,15 +1,23 @@
-import React from 'react'
+import { auth } from "../../firebase"
+import { useAuthState } from 'react-firebase-hooks/auth';
+import Chat from "./Chat";
 
 const navchatstyle = {
-    navcontainer: `border-solid border-4 border-purple-500 w-[100%] h-[100%]`,
-    headernav: `border-solid border-4 border-green-500 w-[100%] h-[100%]`
+    navcontainer: `border-solid border-4 border-purple-500 w-[100%] h-[25%]  flex justify-between items-center p-4`,
+    headernav: `border-solid border-4 border-green-500 w-[100%] h-[100%] text-3xl`
 }
 
 const ChatNav = () => {
+
+const [authUser]  = useAuthState(auth)
+console.log(authUser, 'auth user')
+
   return (
     <div className={navchatstyle.navcontainer}>
-    <h1 className={navchatstyle.headernav}>Messenger</h1>
-    
+    <h1 className={navchatstyle.headernav}>Navbar</h1>
+{authUser
+? <Chat/>: null}
+{/* < Chat /> */}
     </div>
   )
 }
