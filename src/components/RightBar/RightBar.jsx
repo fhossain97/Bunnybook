@@ -42,9 +42,10 @@ const RightBar = () => {
               <b>{news.title}</b> 
               </span>
             </div>
-            {news.byline}
-            <hr/>
-            <i><a href={news.url}>Click me for more information!</a></i>
+            {news.byline} 
+            <br/>
+         
+            <i><a href={news.url} target='blank'>(Click me for more information!)</a></i>
             {news && news.multimedia ?(
               <img
                 className="rightbarAd"

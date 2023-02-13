@@ -14,6 +14,7 @@ const App = () => {
   let navigate = useNavigate();
 
   const [posts, setPosts] = useState([]);
+  const [comments, setComments] = useState([]);
   const [user, setUser] = useState();
 
   useEffect(() => {
@@ -24,6 +25,10 @@ const App = () => {
 
   const addPost = (post) => {
     setPosts([...posts, post]);
+  };
+
+  const addComment = (comment) => {
+    setComments([...comments, comment]);
   };
 
   const updatePostState = (id) => {
@@ -40,6 +45,7 @@ const App = () => {
   };
 
   return (
+   
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
       <Routes>
         <Route
@@ -55,19 +61,29 @@ const App = () => {
         <Route
           path="/"
           element={
-            <Home posts={posts} updatePostState={updatePostState} user={user} addPost={addPost}/>
+            <Home
+              posts={posts}
+              updatePostState={updatePostState}
+              user={user}
+              addPost={addPost}
+              addComment={addComment}
+            />
           }
         />
-      
 
         <Route
           path="/posts/edit/:id"
-          element={<PostEdit setPosts={setPosts} posts={posts} updatePostState={updatePostState} />}
+          element={
+            <PostEdit
+              setPosts={setPosts}
+              posts={posts}
+              updatePostState={updatePostState}
+            />
+          }
         />
         <Route
           path="/posts/:id"
           element={<PostView posts={posts} updatePostState={updatePostState} />}
-         
         />
 
         <Route

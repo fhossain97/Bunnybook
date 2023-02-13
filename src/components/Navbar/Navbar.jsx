@@ -14,7 +14,7 @@ const Navbar = ({ user, handleLogout }) => {
 
   const [posts, setPosts] = useState([]);
 
- let token = localStorage.getItem('token')
+//  let token = localStorage.getItem('token')
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/posts/`)
@@ -23,7 +23,9 @@ const Navbar = ({ user, handleLogout }) => {
   }, []);
 
 
-  let nav = token ? (
+
+if (user){
+  return(
 
     <div className="navbarContainer">
 
@@ -77,28 +79,28 @@ const Navbar = ({ user, handleLogout }) => {
         className="navbarProfilePic"
       /> */}
     </div>
-  ) : (
-    <div className="navbarContainer">
-    <div className="loginandregister">
-          <Link to="/register" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-            <span className="navbarLink"> <AppRegistrationIcon/>Register</span>{" "}
-          </Link>
-        </div>
 
-<div className="loginandregister">
-<Link to="/login" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-  <span className="navbarLink">
-    <LoginIcon/> Login</span>{" "}
-</Link>
-</div>
-</div>
 
-  )
+  ) } else {
+    return (
+      <div className="navbarContainer">
+      <div className="loginandregister">
+            <Link to="/register" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+              <span className="navbarLink"> <AppRegistrationIcon/>Register</span>{" "}
+            </Link>
+          </div>
+  
+  <div className="loginandregister">
+  <Link to="/login" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+    <span className="navbarLink">
+      <LoginIcon/> Login</span>{" "}
+  </Link>
+  </div>
+  </div>
+  
+    )
+    }
 
-  return (
-<nav>{nav}</nav>
-
-  );
 };
 
 export default Navbar;

@@ -1,8 +1,9 @@
 import "./Post.css";
 import { Link } from "react-router-dom";
 import { MoreVert } from "@mui/icons-material";
+import Comments from "../Comments/Comments";
 
-const Post = ({ post, id }) => {
+const Post = ({ post, id, addComment}) => {
   return (
     <div className="content" key={id}>
       <div className="cwrapper">
@@ -24,8 +25,9 @@ const Post = ({ post, id }) => {
           />
         </div>
         <div className="cbottom">
-          <div className="cbottomleft"><span className="cdate">{post.date}</span></div>
-          <div className="cbottomright"></div>
+          {/* <div className="cbottomleft"><span className="cdate">{post.date}</span></div> */}
+          {/* <div className="cbottomright"> comment<Comments /></div> */}
+          <Comments addComment ={addComment} />
         </div>
       </div>
     </div>
