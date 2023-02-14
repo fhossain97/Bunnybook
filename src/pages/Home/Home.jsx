@@ -5,7 +5,7 @@ import RightBar from "../../components/RightBar/RightBar";
 import Login from "../Login/Login";
 import "./Home.css";
 
-const Home = ({ posts, updatePostState, user , addPost, addComment, handleSignupOrLogin, setUser}) => {
+const Home = ({ posts, updatePostState, user , addPost,  handleSignupOrLogin, setUser}) => {
 
 
   if (user) {
@@ -14,7 +14,7 @@ return (<div className="homefeed">
 
       <div className="hfwrapper">
         <Status addPost={addPost} />
-        <Posts posts={posts} updatePostState={updatePostState} user={user} addComment ={addComment}  />
+        <Posts posts={posts} updatePostState={updatePostState} user={user}  />
       </div>
 
       <RightBar />

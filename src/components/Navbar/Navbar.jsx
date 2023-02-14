@@ -14,7 +14,6 @@ const Navbar = ({ user, handleLogout }) => {
 
   const [posts, setPosts] = useState([]);
 
-//  let token = localStorage.getItem('token')
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/posts/`)
@@ -65,7 +64,7 @@ if (user){
       <div className="navbarLinks">
       <button className=" px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
       <Link to="" style={{textDecoration: 'none'}} onClick={handleLogout}>
-           <LogoutIcon/> {user} Log Out
+           <LogoutIcon/> {user.username} Log Out
               </Link>
               </button>  
               </div>

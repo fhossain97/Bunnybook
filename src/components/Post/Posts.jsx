@@ -3,7 +3,7 @@ import axios from "axios";
 import Post from "./Post";
 
 
-const Posts = ({ posts, updatePostState, user, addComment}) => {
+const Posts = ({ posts, updatePostState, user}) => {
 
       const deletePost= (id) => {
         axios.delete(`${process.env.REACT_APP_API}/posts/${id}/`)
@@ -19,7 +19,7 @@ console.log(posts)
     <div>
         { 
           posts.length === 0 ? 'No Post Available' :  (posts?.map( post => {
-                return <Post key={post.id} id={post.id} post={post} deletePost={deletePost} user={user} addComment={addComment}/>
+                return <Post key={post.id} id={post.id} post={post} deletePost={deletePost} user={user} />
             }))
         }
     </div>

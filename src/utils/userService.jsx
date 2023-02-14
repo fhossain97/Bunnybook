@@ -11,7 +11,7 @@ async function signup(user){
 async function login(creds) {
  let loginresponse= await axios.post(BASE_URL + 'login/', creds)
 tokenService.setToken(loginresponse.data.token)
-return loginresponse.data.username
+return loginresponse.data
 }
 
 function getUser() {

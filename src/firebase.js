@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import {getAuth, signInAnonymously, onAuthStateChanged, signOut} from 'firebase/auth'
+import { initializeApp} from "firebase/app";
+import {getAuth} from 'firebase/auth'
 import {getFirestore} from 'firebase/firestore'
 
 require("firebase/auth");
@@ -13,35 +13,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_AID,
   measurementId: process.env.REACT_APP_MMID
 };
-
-
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth()
-// const anon = signInAnonymously(auth)
-
-// export const changedAuth = () => {onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//         const idu = user.idu
-//         return idu
-//     } else {
-// signOut(auth)
-//     }
-// })
-// }
-
-// export const isSignedIn = () => {
-// signInAnonymously(auth)
-//   .then(() => {
-//     console.log('Signed in')
-//   })
-//   .catch((err) => {
-//     console.log(err, 'Error in signing in user')
-//     // ...
-//   });
-// }
-
-
-
-
+export const auth = getAuth(app)
 
 export const messagedb = getFirestore(app)

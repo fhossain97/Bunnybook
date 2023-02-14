@@ -3,11 +3,11 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import './Comments.css'
 
-const Comments = ({addComment}) => {
+const NewComment = ({addComment}) => {
 const initialState ={
     body: ''
 }
-let {id}= useParams()
+let {id} = useParams()
 
 const [formData, setFormData] = useState(initialState)
 const navigate = useNavigate();
@@ -21,10 +21,11 @@ const handleSubmit = (e) => {
     const bodycom = new FormData();
     bodycom.append("body", formData.body);
     console.log(formData);
-    axios.post(`${process.env.REACT_APP_API}/posts/${id}/`, bodycom)
+    axios.post(`${process.env.REACT_APP_API}/posts/${id}/comments/`, bodycom)
     .then((res) => {
       setFormData(initialState);
       addComment(res.data);
+      console.log(res.data)
       navigate("/", { replace: true });
     });
 }
@@ -58,13 +59,10 @@ const handleSubmit = (e) => {
 					  </div>
 					</div>
 				</div>
-				<div className="row">
-					<ul id="list_comment" className="col-md-12"></ul>
-
-</div></div></div>
+				</div></div>
 </div>
    </form>
   )
 }
 
-export default Comments
+export default NewComment
