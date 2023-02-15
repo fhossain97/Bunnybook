@@ -16,3 +16,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app)
 export const messagedb = getFirestore(app)
+
+// firebase tutorial -https://www.youtube.com/watch?v=PJCr_aoOv68

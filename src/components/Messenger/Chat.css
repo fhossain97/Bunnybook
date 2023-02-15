@@ -1,0 +1,55 @@
+.btnedit {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: var(--accent-color);
+    color: white;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+  }
+
+  .topbar {
+    height: 50px;
+	border-top: 1px solid darkblue;
+ 
+  }
+
+  .formfield {
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .sendbtn {
+    cursor: pointer;
+    display: inline-block;
+    width: 5%;
+    background: var(--accent-color);
+    color: white;
+   box-shadow: 1px;
+    font-family: inherit;
+    font-size: 16px;
+    border: none;
+
+  }
+
+  .sendinput {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    border: none;
+    position: relative;
+    vertical-align: middle;
+    font-size: 16px;
+  }
+
+  .sendinput:focus {
+    outline: none;
+  }
+
+
+  /* for styling https://devsenv.com/tutorials/how-to-design-a-beautiful-messenger-application-chat-ui-using-tailwind-css */

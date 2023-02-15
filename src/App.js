@@ -7,7 +7,7 @@ import PostEdit from "./pages/PostEdit";
 import userService from "./utils/userService.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
-import Profile from "./components/Profile/Profile.jsx";
+// import Profile from "./components/Profile/Profile.jsx";
 import ChatBox from "./pages/ChatBox.jsx";
 
 const App = () => {
@@ -86,7 +86,7 @@ const App = () => {
           element={<PostView posts={posts} updatePostState={updatePostState} />}
         />
 
-        <Route
+        {/* <Route
           path="/profile"
           element={
             <Profile
@@ -95,7 +95,7 @@ const App = () => {
               user={user}
             />
           }
-        />
+        /> */}
         <Route path="/message" element={<ChatBox />} />
       </Routes>
     </Layout>

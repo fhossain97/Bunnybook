@@ -2,10 +2,6 @@ import { Link  } from "react-router-dom";
 import {useState, useEffect} from 'react'
 import "./Navbar.css";
 
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import CottageIcon from '@mui/icons-material/Cottage';
-import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import Searchbar from '../Searchbar/Search'
@@ -41,35 +37,35 @@ if (user){
       </div>
       <div className="navbarRight">
         <div className="navbarLinks">
-          <Link to="/" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-            <span className="navbarLink"><CottageIcon/> Home</span>{" "}
+          <Link to="/" className="text-white font-medium text-xs leading-tight uppercase">
+            <span className="navbarLink"> Home</span>
           </Link>
         </div>
         
         <div className="navbarLinks">
-          <Link to="/message" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-            <span className="navbarLink"><ChatBubbleOutlineIcon />Messenger</span>{" "}
+          <Link to="/message" className="text-white font-medium text-xs leading-tight uppercase">
+            <span className="navbarLink">Messenger</span>
           </Link>
         </div>
-
+{/* 
         <div className="navbarLinks">
-          <Link to="/profile" className="px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-            <span className="navbarLink"> <AccountCircleIcon /> Profile</span>{" "}
+          <Link to="/profile" className="text-white font-medium text-xs leading-tight uppercase">
+            <span className="navbarLink"> Profile</span>
           </Link>
-        </div>
+        </div> */}
 
 
-      </div>
+    
 
       <div className="navbarLinks">
-      <button className=" px-6 py-2.5 fb-blue-600 text-white font-medium text-xs leading-tight uppercase  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-      <Link to="" style={{textDecoration: 'none'}} onClick={handleLogout}>
-           <LogoutIcon/> {user.username} Log Out
-              </Link>
+      <button className="text-white font-medium text-xs leading-tight uppercase" style={{textDecoration: 'none'}} onClick={handleLogout}>
+   
+     {user.username} Log Out
+     
               </button>  
               </div>
 
-
+              </div>
      
  
       {/* <img

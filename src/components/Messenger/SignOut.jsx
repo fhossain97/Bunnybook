@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
 import {auth} from '../../firebase'
-
+import './Chat.css'
 
 
 
@@ -16,7 +16,7 @@ const logOut = () => {
 
     return (
         <div>
-<button onClick={logOut()} >
+<button onClick={() => logOut()} className='btnedit '>
 Logout
 </button>
 
