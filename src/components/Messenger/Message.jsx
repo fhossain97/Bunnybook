@@ -4,6 +4,8 @@ bunny: `absolute mt-[-4rem] text-gray-600 text-xs`
 }
 
 const Message = ({message}) => {
+
+
  
   return (
     <div>

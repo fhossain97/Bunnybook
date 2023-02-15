@@ -2,9 +2,7 @@ import { signOut } from "firebase/auth";
 import {auth} from '../../firebase'
 
 
-const signoutbutton = {
-    button: `color-pink`
-}
+
 
 const SignOut = () => {
 
@@ -18,8 +16,8 @@ const logOut = () => {
 
     return (
         <div>
-<button onClick={()=> auth.logOut()} className={signoutbutton.button}>
-
+<button onClick={logOut()} >
+Logout
 </button>
 
 

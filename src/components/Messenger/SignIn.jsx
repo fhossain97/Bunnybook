@@ -1,42 +1,27 @@
 import { auth } from "../../firebase";
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import {GithubAuthProvider,  signInWithRedirect} from 'firebase/auth'
+
+const style = {
+    button: `w-[100%] h-[50%]`
+}
 
 const SignIn = () => {
-  auth.languageCode = "it";
 
-  window.recaptchaVerifier = new RecaptchaVerifier(
-    "recaptcha-container",
-    {},
-    auth
-  );
 
-  const phoneNumber = "+19293658413";
-  const appVerifier = "123456";
-
-  const handleClick = () => {
-    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-      .then((confirmationResult) => {
-        window.confirmationResult = confirmationResult;
-        const code = getCodeFromUserInput();
-        confirmationResult
-          .confirm(code)
-          .then((result) => {
-    
-            const user = result.user;
-  console.log(user)
-          })
-          .catch((error) => {
-            window.recaptchaVerifier.render().then(function (widgetId) {
-                grecaptcha.reset(widgetId);
-              });
-      })
-
-        })
+const githubSignIn = () => {
+    const provider = new GithubAuthProvider()
+    signInWithRedirect(auth, provider).then(() => {
+        console.log('Sign In Successful')
+      }).catch((err) => {
+        console.log(err, 'Sign In unsucessful')
+      }); 
 }
+
+
 
   return (
     <div>
-      <button onClick={handleClick}></button>
+        <button onClick={githubSignIn} className={style.button}>Login</button>
     </div>
   );
 };

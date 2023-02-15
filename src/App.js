@@ -8,7 +8,7 @@ import userService from "./utils/userService.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 import Profile from "./components/Profile/Profile.jsx";
-import BBchat from "./pages/BBchat.jsx";
+import ChatBox from "./pages/ChatBox.jsx";
 
 const App = () => {
   let navigate = useNavigate();
@@ -96,7 +96,7 @@ const App = () => {
             />
           }
         />
-        <Route path="/message" element={<BBchat />} />
+        <Route path="/message" element={<ChatBox />} />
       </Routes>
     </Layout>
   );

@@ -8,9 +8,11 @@ import RightBar from "../RightBar/RightBar";
 // import Status from "../../pages/Status";
 
 const Profile = ({ posts, updatePostState, user }) => {
+
   return (
     <div className="profileindv">
       <LeftBar />
+
      
       <div className="proright">
         <div className="prorighttop">
@@ -23,11 +25,16 @@ const Profile = ({ posts, updatePostState, user }) => {
                 <p className="prodsc">Fluffy!</p>
             </div>
         </div>
-        <div className="prorightbottom">
-         {/*  */}
-        <Posts posts={posts} updatePostState={updatePostState}  user={user} />
 
-        </div>
+        {user.posts? (
+        <div className="prorightbottom">
+        {/*  */}
+       <Posts posts={posts} updatePostState={updatePostState}  user={user} />
+
+       </div>
+         ) :'Create some posts'
+        }
+
       </div>
       <RightBar/>
     </div>
