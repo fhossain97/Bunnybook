@@ -1,16 +1,18 @@
 # Bunnybook
-Bunnybook is a playful take on the ever so popular Facebook. Instead of connecting humans together, Bunnybook connects all bunnies together. Each bunny will be able to create their own user profile in order to post statuses, upload images, and comment on posts from all users (including their own). Additionally, bunny users will be able to update and delete their posts and comments as needed. Authentication (login/logout) will also be included for all users.
+Bunnybook is a playful take on the ever so popular Facebook. Instead of connecting humans together, Bunnybook connects all bunnies together. Each bunny is able to login/logout via token and GitHub authentication. Bunny users can create, update, and delete their posts and can upload images as well. Additionally, bunnies are able to message one another just like facebook!
 
 # Links
-Github Front-End: https://github.com/fhossain97/Bunnybook
-Github Back-End: https://github.com/fhossain97/BB-backend
-<!-- Heroku Front-End: https://bunnyfront.herokuapp.com/
-Heroku Back-End: https://bunnyback.herokuapp.com/ -->
+- Github Front-End: https://github.com/fhossain97/Bunnybook
+- Github Back-End: https://github.com/fhossain97/BB-backend
+
+# Deployment
+- Front-end: 
+- Back-end: https://bb-back-db.fly.dev/
 
 # Technologies 
-- Frontend: React
+- Frontend: React.js
 - Backend: Django and Django Rest Framework
-- Additional: Cloudinary
+- Additional: Cloudinary (image upload), Tidio (widget for customer communication), Firebase (for messenger and GitHub authentication), and APIs (NY times and random friends)
 
 # MVP (user)
 - As a user, I want to create my own username and password
@@ -22,46 +24,19 @@ Heroku Back-End: https://bunnyback.herokuapp.com/ -->
 - As users, we want to be able to only delete and edit posts
 
 # Stretch Goals
-- Messaging app: Users can message one another (with message box)
+- Create my own profile
 - Post emojis: Like and dislike posts
-- What's on your mind?: Users can add status updates
-- Search Bar
-- As a user, I want to comment on other posts, including that of my own 
-- As a user, I want to have create, update, and delete functionality on comments created
-- As a user, I want to have create, update, and delete functionality on comments created
-
-# Wireframes
-
-<!-- Home-Page Mock Up:
-<img src="Images/homepage.png" alt="Bunnybook homepage">
-
-Profile Mock Up:
-<img src="Images/profile.png" alt="Bunnybook profile">
-
-# Site 
-
-Login:
-<img src="Images/login.png" alt="Bunnybook homepage">
-
-Sign-Up:
-<img src="Images/sign up.png" alt="Bunnybook homepage">
-
-Home-Page:
-<img src="Images/homeb.png" alt="Bunnybook homepage">
-
-Profile:
-<img src="Images/profileb.png" alt="Bunnybook homepage"> -->
+- As a user, I want to comment on other posts (be able to create, update, and delete)
 
 # Installation Instructions
-Fork repository from Github. Clone repository on your desktop.
+Fork repository from Github. Clone repository on your desktop and enjoy!
 
 # Methods
 Following various documentations for Django and React. Referencing facebook and social media mock-ups for samples and inspiration.
 
 # Future Code
 - Implement Strech Goals
-- Webpage needs more dynamic aspects (profile, friends, etc)
-- Needs additional user model inputs (profile pic, friend list, etc.)
+- Needs additional abstract user model 
 
 
 
