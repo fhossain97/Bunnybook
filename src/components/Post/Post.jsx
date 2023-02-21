@@ -21,7 +21,7 @@ const Post = ({ post, id, addComment}) => {
           <img
             className="cimg"
             alt=""
-            src={`https://res.cloudinary.com/mushu/${post.file}`}
+            src={`${process.env.REACT_APP_CLOUDINARY}/${post.file}`}
           />
         </div>
         <div className="cbottom">

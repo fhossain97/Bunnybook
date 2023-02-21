@@ -1,9 +1,10 @@
 import "./Friends.css";
 import { useState, useEffect } from "react";
 
-const friendUrl = "https://randomuser.me/api/?results=10";
+
 
 const Friends = ({profile}) => {
+  const friendUrl =`${process.env.REACT_APP_FRIEND_URL}`;
     const [friend, setFriend] = useState({});
 
     useEffect(() => {
@@ -13,7 +14,7 @@ const Friends = ({profile}) => {
           console.log( "User API", data);
         setFriend(data);
         });
-    }, []);
+    }, [friendUrl]);
 
       return (
     <>

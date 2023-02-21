@@ -7,7 +7,7 @@ Bunnybook is a playful take on the ever so popular Facebook. Instead of connecti
 
 # Deployment
 - Front-end: 
-- Back-end: https://bb-back-db.fly.dev/
+- Back-end: https://bb-backend-production.up.railway.app/bunnybook/posts
 
 # Technologies 
 - Frontend: React.js

@@ -6,7 +6,7 @@ import Friends from "../Friends/Friends";
 
 const RightBar = () => {
   const newsUrl =
-  "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=O0WMvPRUYhxAKNjMH6Hdvqin6phDynos";
+  `${process.env.REACT_APP_NEWS_URL}`;
 
   const [news, setNews] = useState({});
 
@@ -17,7 +17,7 @@ const RightBar = () => {
         console.log("News API", data);
         setNews(data.results[0]);
       });
-  }, []);
+  }, [newsUrl]);
 
   return (
     <>
