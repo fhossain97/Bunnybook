@@ -2,12 +2,8 @@ import { auth } from "../../firebase";
 import {GithubAuthProvider,  signInWithRedirect} from 'firebase/auth'
 import GithubButton from 'react-github-login-button'
 
-const style = {
-    button: `w-[100%] h-[50%]`
-}
 
 const SignIn = () => {
-
 
 const githubSignIn = () => {
     const provider = new GithubAuthProvider()
@@ -17,8 +13,6 @@ const githubSignIn = () => {
         console.log(err, 'Sign In unsucessful')
       }); 
 }
-
-
 
   return (
     <div>
