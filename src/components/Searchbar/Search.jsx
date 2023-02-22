@@ -32,7 +32,7 @@ const Searchbar = ({ placeholder, data }) => {
                 className="postData"
                 key={post.id}
                 target="_blank"
-                to={`/posts/${post.id}`}
+                to={`${process.env.REACT_APP_API}/posts/${post.id}`}
               >
                 <p className='dropdown-row'>{post.status_body}</p>
               </Link>
