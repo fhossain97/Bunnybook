@@ -14,13 +14,13 @@ const Login = ({ handleSignupOrLogin, setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-
     let loginForm= await userToken.login(formData); 
       handleSignupOrLogin();
       setUser(loginForm)
       navigate("/");
     } catch (err) {
-      alert("Invalid Credentials");
+      console.log(err, 'Error logging in')
+      alert("Sign In Unsucessful");
     }
   };
 
