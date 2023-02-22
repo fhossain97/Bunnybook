@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import userToken from "../../utils/userService";
 import "./Login.css";
 
@@ -14,28 +14,28 @@ const Login = ({ handleSignupOrLogin, setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-    let loginForm= await userToken.login(formData); 
-   
-      setUser(loginForm)
+      let loginForm = await userToken.login(formData);
       handleSignupOrLogin();
+      setUser(loginForm);
       navigate("/");
     } catch (err) {
-      console.log(err, 'Error logging in')
+      console.log(err, "Error logging in");
       alert("Sign In Unsucessful");
     }
   };
 
   return (
-    <div className="login" onSubmit={handleSubmit} >
+    <div className="login" onSubmit={handleSubmit}>
       <div className="lwrapper">
         <div className="lleft">
           <h3 className="llogo">Bunnybook</h3>
           <span className="ldsc">
-          Stay connected with those you love. Discover what's going on in the world. Share and express what matters.
+            Stay connected with those you love. Discover what's going on in the
+            world. Share and express what matters.
           </span>
         </div>
         <div className="lright">
-          <form method="POST"  className="lbox">
+          <form method="POST" className="lbox">
             <input
               className="linput"
               id="email"
@@ -58,12 +58,12 @@ const Login = ({ handleSignupOrLogin, setUser }) => {
             <button className="lbutton" type="submit">
               Log In
             </button>
-            
-            <button className="signupbutton"><Link to="/register" style={{ textDecoration: 'none' }}>
-              Create a New Account</Link>
-            </button>
-         
 
+            <button className="signupbutton">
+              <Link to="/register" style={{ textDecoration: "none" }}>
+                Create a New Account
+              </Link>
+            </button>
           </form>
         </div>
       </div>
