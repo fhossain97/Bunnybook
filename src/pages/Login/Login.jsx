@@ -15,8 +15,9 @@ const Login = ({ handleSignupOrLogin, setUser }) => {
     e.preventDefault();
     try {
     let loginForm= await userToken.login(formData); 
-      handleSignupOrLogin();
+   
       setUser(loginForm)
+      handleSignupOrLogin();
       navigate("/");
     } catch (err) {
       console.log(err, 'Error logging in')
@@ -34,7 +35,7 @@ const Login = ({ handleSignupOrLogin, setUser }) => {
           </span>
         </div>
         <div className="lright">
-          <form method="POST" action="#" className="lbox">
+          <form method="POST"  className="lbox">
             <input
               className="linput"
               id="email"
