@@ -20,7 +20,6 @@ Bunnybook is a playful take on the ever so popular Facebook. Instead of connecti
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-
 # MVP (user)
 - As a user, I want to create my own username and password
 - As a user, I want to upload images/photos.
