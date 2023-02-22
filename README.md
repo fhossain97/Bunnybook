@@ -16,7 +16,7 @@ Bunnybook is a playful take on the ever so popular Facebook. Instead of connecti
 
 # Video Walkthrough
 
-<img src='./public/PIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./public/bb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
