@@ -13,15 +13,15 @@ const Login = ({ handleSignupOrLogin, setUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
+    // try {
     let loginForm= await userToken.login(formData); 
       handleSignupOrLogin();
       setUser(loginForm)
       navigate("/");
-    } catch (err) {
-      console.log(err, 'Error logging in')
-      alert("Sign In Unsucessful");
-    }
+    // } catch (err) {
+    //   console.log(err, 'Error logging in')
+    //   alert("Sign In Unsucessful");
+    // }
   };
 
   return (
