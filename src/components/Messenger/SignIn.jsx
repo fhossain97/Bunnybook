@@ -1,22 +1,19 @@
 import { auth } from "../../firebase";
-import {GithubAuthProvider,  signInWithRedirect} from 'firebase/auth'
-import GithubButton from 'react-github-login-button'
-
+import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
+import GithubButton from "react-github-login-button";
 
 const SignIn = () => {
+  const githubSignIn = async () => {
+    const provider = new GithubAuthProvider();
 
-const githubSignIn = () => {
-    const provider = new GithubAuthProvider()
-    signInWithRedirect(auth, provider).then(() => {
-        console.log('Sign In Successful')
-      }).catch((err) => {
-        console.log(err, 'Sign In unsucessful')
-      }); 
-}
+    signInWithPopup(auth, provider).catch((error) => {
+      console.warn(error, "error in authenticating with github");
+    });
+  };
 
   return (
     <div>
-        <GithubButton onClick={githubSignIn} type="dark" />
+      <GithubButton onClick={githubSignIn} type="dark" />
     </div>
   );
 };

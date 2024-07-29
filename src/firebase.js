@@ -1,6 +1,6 @@
-import { initializeApp} from "firebase/app";
-import {getAuth} from 'firebase/auth'
-import {getFirestore} from 'firebase/firestore'
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 require("firebase/auth");
 
@@ -11,10 +11,10 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_SB,
   messagingSenderId: process.env.REACT_APP_MID,
   appId: process.env.REACT_APP_AID,
-  measurementId: process.env.REACT_APP_MMID
+  measurementId: process.env.REACT_APP_MMID,
 };
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app)
-export const messagedb = getFirestore(app)
+export const auth = getAuth(app);
+export const messagedb = getFirestore(app);
 
 // firebase tutorial -https://www.youtube.com/watch?v=PJCr_aoOv68

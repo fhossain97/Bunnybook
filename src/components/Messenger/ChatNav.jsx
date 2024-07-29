@@ -6,25 +6,22 @@ import SignOut from "./SignOut";
 const ChatNav = () => {
   const [user] = useAuthState(auth);
 
-  console.log(user, "this is the user");
-
   return (
     <div className="bg-white user-info-header px-5 py-3 shadow-xl">
       <div className="flex justify-between">
-        
         <div className="flex items-center">
-          
           <img
-          alt =''
+            alt=""
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo2LsThpEMGdDAYrfUrP7aHFDtkfIgbw60CQ&usqp=CAU"
             width="70"
           />
-          
-          <h3 className="text-gray-600 tex-md pl-4"> {user? user.displayName: null}</h3>
+
+          <h3 className="text-gray-600 tex-md pl-4">
+            {" "}
+            {user ? user.displayName : null}
+          </h3>
         </div>
         <div>
-
-
           <i className="fa fa-message text-blue-300">
             {!user ? <SignIn /> : <SignOut />}
           </i>
@@ -39,5 +36,3 @@ const ChatNav = () => {
 };
 
 export default ChatNav;
-
-

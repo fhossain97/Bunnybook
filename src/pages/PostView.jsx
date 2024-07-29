@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const PostView = ({updatePostState }) => {
+const PostView = ({ updatePostState }) => {
   let navigate = useNavigate();
 
   const deletePost = (id) => {
     axios
       .delete(`${process.env.REACT_APP_API}/posts/${post.id}/`)
       .then((res) => {
-        console.log(res);
         updatePostState(post.id);
         return navigate("/");
       });
@@ -22,7 +21,7 @@ const PostView = ({updatePostState }) => {
     fetch(`${process.env.REACT_APP_API}/posts/${id}/`)
       .then((res) => res.json())
       .then((data) => setPost(data));
-  },[id]);
+  }, [id]);
 
   return (
     <div>

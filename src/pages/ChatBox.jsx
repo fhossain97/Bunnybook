@@ -1,6 +1,5 @@
 import ChatNav from "../components/Messenger/ChatNav";
 import Chat from "../components/Messenger/Chat";
-
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 

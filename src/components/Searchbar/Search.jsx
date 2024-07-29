@@ -18,29 +18,28 @@ const Searchbar = ({ placeholder, data }) => {
   };
 
   return (
-    <div className='main'>
-    <div className="search">
-      <div className="input">
-        <input type="text" placeholder="Search" onChange={handleFilter} />
-      </div>
-      {filteredPost.length !== 0 && (
-        <div className="dropdown">
-          {filteredPost.map((post) => {
-            console.log(filteredPost, "Filtered Post");
-            return (
-              <Link
-                className="postData"
-                key={post.id}
-                target="_blank"
-                to={`/posts/${post.id}`}
-              >
-                <p className='dropdown-row'>{post.status_body}</p>
-              </Link>
-            );
-          })}
+    <div className="main">
+      <div className="search">
+        <div className="input">
+          <input type="text" placeholder="Search" onChange={handleFilter} />
         </div>
-      )}
-    </div>
+        {filteredPost.length !== 0 && (
+          <div className="dropdown">
+            {filteredPost.map((post) => {
+              return (
+                <Link
+                  className="postData"
+                  key={post.id}
+                  target="_blank"
+                  to={`/posts/${post.id}`}
+                >
+                  <p className="dropdown-row">{post.status_body}</p>
+                </Link>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

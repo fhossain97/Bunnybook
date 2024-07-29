@@ -19,8 +19,7 @@ const Login = ({ handleSignupOrLogin, setUser }) => {
       setUser(loginForm);
       navigate("/");
     } catch (err) {
-      console.log(err, "Error logging in");
-      alert("Sign In Unsucessful");
+      console.error(err, "Error logging in");
     }
   };
 
